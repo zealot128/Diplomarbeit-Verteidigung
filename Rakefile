@@ -14,3 +14,11 @@ task :style do
   include DeckJSBuilder
   css
 end
+
+desc "Synchronize github pages"
+task :ghpages do
+  `git checkout gh-pages`
+  `git rebase master`
+  `git push origin gh-pages`
+  `git checkout master`
+end
