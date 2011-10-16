@@ -3,4 +3,27 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
-@import "compass/reset";
+$logo-height: 42px;
+$logo-width: 120px;
+
+.deck-container {
+  #title-slide h1 .subtitle {
+    font-size: 50%;
+  }
+
+   .deck-status {
+    font-size: 1.5em;
+    bottom: 20px;
+  }
+
+  .slide-footer {
+    position: absolute;
+    bottom: 20px;
+    background-image: url("../imgs/logo.png");
+    background-repeat: no-repeat;
+     background-position: left bottom;
+    padding-left: $logo-width + 50px;
+    height: $logo-height;
+    line-height: $logo-height;
+  }
+}

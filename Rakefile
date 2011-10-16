@@ -7,3 +7,10 @@ task :render do
   include DeckJSBuilder
   build "views/layout.html.haml", "index.html"
 end
+
+desc "Rebuild SASS/CSS"
+task :style do
+  require "generator"
+  include DeckJSBuilder
+  css
+end

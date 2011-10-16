@@ -5,4 +5,12 @@ gem "haml"
 gem "rake"
 gem "sass"
 gem "compass"
+gem "rb-inotify"
+gem "guard"
+gem "guard-compass"
+gem 'guard-shell'
+gem "libnotify"
+
+
+
 # gem "rails"
