@@ -6,10 +6,12 @@ This projects provide an easy working with the awesome Deck.js using Ruby, HAML 
 
 Install:
 
-.code git clone https://github.com/zealot128/DeckJS-Builder
+<pre>
+ git clone https://github.com/zealot128/DeckJS-Builder
  cd DeckJS-Builder
  bundle
  guard
+</pre>
 
 Then you can start editing:
 
