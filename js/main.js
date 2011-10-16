@@ -4,10 +4,10 @@ $(function() {
 
 
   toc = $('<ul id="toc-ul"></ul>');
-  $('h2').each(function(bla) {
+  $('.toc h2, .toc h1').each(function(bla) {
     id = $(this).parent().attr("id")
     a = $('<a />').attr("href", "#" + id).html($(this).text())
-    li = $('<li />').html(a)
+    li = $('<li />').html(a).attr("class", this.tagName)
     toc.append(li)
   });
   $('#toc').html(toc);

@@ -12,8 +12,9 @@ $logo-width: 120px;
   }
 
    .deck-status {
-    font-size: 1.5em;
+    font-size: 1.3em;
     bottom: 20px;
+    right: 20px;
   }
 
   .slide-footer {
@@ -21,9 +22,32 @@ $logo-width: 120px;
     bottom: 20px;
     background-image: url("../imgs/logo.png");
     background-repeat: no-repeat;
-     background-position: left bottom;
+    background-position: left bottom;
     padding-left: $logo-width + 50px;
     height: $logo-height;
     line-height: $logo-height;
   }
 }
+.deck-menu .slide-footer {
+  background: none;
+}
+.deck-container section.slide {
+  background: none repeat scroll 0 0 white;
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 1px 2px 20px #ccc;
+  text-shadow: none;
+}
+
+#toc {
+  .H2 {
+    margin-left: 20px;
+    list-style: circle outside none;
+  }
+  a {
+    color: black;
+  }
+}
+@import "tdd";
+

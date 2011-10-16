@@ -8,10 +8,11 @@
 }
 /* line 14, ../sass/screen.scss */
 .deck-container .deck-status {
-  font-size: 1.5em;
+  font-size: 1.3em;
   bottom: 20px;
+  right: 20px;
 }
-/* line 19, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 .deck-container .slide-footer {
   position: absolute;
   bottom: 20px;
@@ -21,4 +22,74 @@
   padding-left: 170px;
   height: 42px;
   line-height: 42px;
+}
+
+/* line 31, ../sass/screen.scss */
+.deck-menu .slide-footer {
+  background: none;
+}
+
+/* line 34, ../sass/screen.scss */
+.deck-container section.slide {
+  background: none repeat scroll 0 0 white;
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 1px 2px 20px #ccc;
+  text-shadow: none;
+}
+
+/* line 44, ../sass/screen.scss */
+#toc .H2 {
+  margin-left: 20px;
+  list-style: circle outside none;
+}
+/* line 48, ../sass/screen.scss */
+#toc a {
+  color: black;
+}
+
+/* line 6, ../sass/_tdd.scss */
+h2, h1 {
+  text-shadow: 0px -1px #444444;
+}
+
+/* line 11, ../sass/_tdd.scss */
+.deck-container .red, .deck-container .green, .deck-container .refactor {
+  box-shadow: none;
+}
+/* line 13, ../sass/_tdd.scss */
+.deck-container .red h2, .deck-container .green h2, .deck-container .refactor h2 {
+  text-shadow: 0px -1px black;
+  color: white;
+}
+/* line 18, ../sass/_tdd.scss */
+.deck-container section.slide.red {
+  background: #bf3030;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bf3030), color-stop(100%, #962626));
+  background-image: -webkit-linear-gradient(#bf3030, #962626);
+  background-image: -moz-linear-gradient(#bf3030, #962626);
+  background-image: -o-linear-gradient(#bf3030, #962626);
+  background-image: -ms-linear-gradient(#bf3030, #962626);
+  background-image: linear-gradient(#bf3030, #962626);
+}
+/* line 22, ../sass/_tdd.scss */
+.deck-container section.slide.green {
+  background: #0d8800;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0d8800), color-stop(100%, #085500));
+  background-image: -webkit-linear-gradient(#0d8800, #085500);
+  background-image: -moz-linear-gradient(#0d8800, #085500);
+  background-image: -o-linear-gradient(#0d8800, #085500);
+  background-image: -ms-linear-gradient(#0d8800, #085500);
+  background-image: linear-gradient(#0d8800, #085500);
+}
+/* line 26, ../sass/_tdd.scss */
+.deck-container section.slide.refactor {
+  background: #666670;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666670), color-stop(100%, #4e4e55));
+  background-image: -webkit-linear-gradient(#666670, #4e4e55);
+  background-image: -moz-linear-gradient(#666670, #4e4e55);
+  background-image: -o-linear-gradient(#666670, #4e4e55);
+  background-image: -ms-linear-gradient(#666670, #4e4e55);
+  background-image: linear-gradient(#666670, #4e4e55);
 }
