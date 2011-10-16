@@ -1,0 +1,22 @@
+h1. Readme Deck.JS Builder
+
+"Live example":http://zealot128.github.com/DeckJS-Builder/
+
+This projects provide an easy working with the awesome Deck.js using Ruby, HAML and Compass.
+
+Install:
+
+    git clone https://github.com/zealot128/DeckJS-Builder
+    cd DeckJS-Builder
+    bundle
+    guard
+
+Then you can start editing:
+
+* slides/*.haml  -> the main chapters
+* views/*.haml   -> the layout, title and toc slide
+* sass/screen.scss    -> The Stylings using Scss/Sass
+* meta.yml  -> Title and author
+
+Guard will automatically rebuild index.html and stylesheet when changed!
+
