@@ -35,3 +35,7 @@ Just have a div#toc somewhere, and give your section.slide the additional class:
 </pre>
 
 Only slides that have the .toc class and a h1 or h2 will show up inside the toc.
+
+IMPORTANT: Until now, this includes my work-in-progress thesis' defense
+presentation, because I'am to lazy to put that one in a seperate repos :) Later
+it will be extracted to have a clean empty presentation template

@@ -49,5 +49,13 @@ $logo-width: 120px;
     color: black;
   }
 }
+
+.caption {
+  font-style: italic;
+  font-variant: small-caps;
+  text-align: center;
+  padding-top: -10px;
+}
+
 @import "tdd";
 

@@ -1,8 +1,10 @@
 require "haml"
 require "yaml"
+require "helpers"
 module DeckJSBuilder
   MAIN_DIR = File.join File.dirname(__FILE__), ".."
 
+  include PresentationHelper
 
   META = YAML.load_file File.join(MAIN_DIR, "meta.yml")
 
