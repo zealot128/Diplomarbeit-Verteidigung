@@ -56,6 +56,23 @@ $logo-width: 120px;
   text-align: center;
   padding-top: -10px;
 }
+.deck-container pre {
+  border: 1px solid #999999;
+  border-radius: 0;
+}
 
 @import "tdd";
+@import "syntax/colorful";
+@import "fonts";
+.highlight pre{
+  font-family: "UbuntuMonoRegular", monospace;
+}
+.highlight {
+  background: transparent;
+}
+.deck-container {
+  h1, h2 {
+    font-family: "GabrielleRegular", "Hoefler Text",Constantia,Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif;
+  }
+}
 
