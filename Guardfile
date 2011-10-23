@@ -16,4 +16,7 @@ guard 'shell' do
       `rake render`
     end
   }
+  watch(/lib\/(.*)rb/) {|m|
+    `rake render`
+  }
 end
