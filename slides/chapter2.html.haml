@@ -56,13 +56,14 @@
           a + b
         end
       end
-  =pygmentize "ruby" do
-    :plain
-      def self.add(*args)
-        args.inject(0) do |sum, item|
-          sum + item
+  %pre.slide
+    =pygmentize "ruby" do
+      :plain
+        def self.add(*args)
+          args.inject(0) do |sum, item|
+            sum + item
+          end
         end
-      end
 
 
 

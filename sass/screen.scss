@@ -8,7 +8,9 @@ $logo-width: 120px;
 
 .deck-container {
   #title-slide h1 .subtitle {
-    font-size: 50%;
+    font-family: TeXGyreBonumRegular;
+    font-size: 20px;
+    font-weight: normal;
   }
 
    .deck-status {
@@ -64,7 +66,9 @@ $logo-width: 120px;
 @import "tdd";
 @import "syntax/colorful";
 @import "fonts";
-.highlight pre{
+@import "compass/css3/gradient";
+
+.highlight pre, .deck-container pre{
   font-family: "UbuntuMonoRegular", monospace;
 }
 .highlight {
@@ -74,5 +78,10 @@ $logo-width: 120px;
   h1, h2 {
     font-family: "GabrielleRegular", "Hoefler Text",Constantia,Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif;
   }
+}
+.deck-container {
+  font-family: "MyndraineRegular";
+//, "QlassikMediumRegular";
+  @include linear-gradient(color-stops(#ccc, #666));
 }
 
