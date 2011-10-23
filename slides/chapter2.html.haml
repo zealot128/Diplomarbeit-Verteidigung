@@ -56,7 +56,7 @@
           a + b
         end
       end
-  %pre.slide
+  %div.slide
     =pygmentize "ruby" do
       :plain
         def self.add(*args)
@@ -69,16 +69,22 @@
 
 %section.slide#circle
   %h2 Kreislauf
-  = image_tag_with_caption "imgs/rgr.jpg",  "Agile Flash"
+  = image_tag_with_caption "imgs/rgr.jpg",  "Agile in a Flash"
 
 %section.slide
   %h2 Vorteile
+  %ul
+    %li Code und Test entstehen im Einklang
+    %li &rarr; übersichtlichere Methoden
+    %li von Stunde 0 an hohe Testabdeckung
+    %li ermöglicht sichere Refaktorisierungen
 
 %section.slide
   %h1 Ruby &amp; Rails
 
 %section.slide.toc
   %h2 Ruby
+  %img(src="imgs/ruby.gif" style="float: right; width: 250px;")
   %ul
     %li Yukihiro Matsumoto, 1995 v.0.95, 2011 v.1.9.3
     %li Vielzahl von Implementierungen: MRI, JRuby, Rubininus, <strike>IronRuby</strike>, Blue Ruby
@@ -97,6 +103,7 @@
   %h2 Rails
   / Etwas ueber Rails sagen: 2006?
   / MVC Web-Framework. Unterst
+  %img(src="imgs/rails.png" style="float: right")
   %ul
     %li Konzepte: MVC-Muster, DRY, Convention over Configuration
     / was ist CoC, Beispiel, DRY -> Definition der Spalten
