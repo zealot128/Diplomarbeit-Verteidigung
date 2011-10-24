@@ -2,7 +2,11 @@ h1. Readme Deck.JS Builder
 
 "Live example":http://zealot128.github.com/DeckJS-Builder/
 
-This projects provide an easy working with the awesome Deck.js using Ruby, HAML and Compass.
+This projects provide an easy working with the awesome Deck.js using Ruby, HAML
+and Compass.  Starting guard and start editing your presentation. Guard will
+rebuild the html and stylesheets (scss/sass) when changed.  I used HAML as
+templating, because I think it's awesome and very clean. Textile/MD are not
+flexible for me, e.g. using custom ids, tags and ruby functions.
 
 Install:
 
@@ -15,10 +19,11 @@ Install:
 
 Then you can start editing:
 
-* slides/*.haml  -> the main chapters
+* slides/*.haml  -> the slides chapters
 * views/*.haml   -> the layout, title and toc slide
 * sass/screen.scss    -> The Stylings using Scss/Sass
 * meta.yml  -> Title and author
+* css/fonts/* -> some free-to-use webfonts by fontsquirrel
 
 Guard will automatically rebuild index.html and stylesheet when changed!
 
@@ -39,3 +44,38 @@ Only slides that have the .toc class and a h1 or h2 will show up inside the toc.
 IMPORTANT: Until now, this includes my work-in-progress thesis' defense
 presentation, because I'am to lazy to put that one in a seperate repos :) Later
 it will be extracted to have a clean empty presentation template
+
+h2. Syntax HL
+
+* pygmentize has to be installed to use that.
+* Debian/Ubuntu: apt-get install python-pygments
+* pygments rocks. It has the most lexers and a lot of output formats
+* Highlighting gets cached at .syntax-cache/ to make rebuilding faster
+
+Changing Style:
+* Exporting stylesheet from pygments
+
+<pre>
+  @import "syntax/colorful";
+  /* like this */
+</pre>
+
+Generating new styles:
+<pre>
+pygmentize -S colorful -f html -a .highlight >> sass/syntax/colorful.scss
+
+# List available styles
+pygmentize -L styles
+</pre>
+
+h2. Helpers
+
+<pre>
+  = pygmentize "ruby" do
+    :preserve
+      def hello_world
+        puts "hello world"
+      end
+
+  = image_tag_with_caption "imgs/bla.gif", "Source: flickr.com"
+</pre>
