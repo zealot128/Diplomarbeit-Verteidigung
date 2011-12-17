@@ -10,6 +10,16 @@ $logo-width: 120px;
   #title-slide h1 .subtitle {
     font-size: 50%;
   }
+  h2.subtitle {
+    -moz-transform: translate(0pt, -50%);
+    left: 0;
+    padding: 0 48px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    font-size: 300%;
+    text-align: center;
+  }
 
    .deck-status {
     font-size: 1.3em;
@@ -76,3 +86,22 @@ $logo-width: 120px;
   }
 }
 
+.deck-container section h1 {
+  @include background-image(linear-gradient(#f3f3f3, #e3e3e3));
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+.side-image {
+  float: right;
+  margin: 20px;
+  .caption {
+    border-top:  1px solid #999;
+  }
+}
+.image-list {
+  img { display: inline; padding: 0 10px;}
+  padding: 10px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}

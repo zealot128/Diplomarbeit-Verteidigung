@@ -6,13 +6,24 @@
 .deck-container #title-slide h1 .subtitle {
   font-size: 50%;
 }
-/* line 14, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
+.deck-container h2.subtitle {
+  -moz-transform: translate(0pt, -50%);
+  left: 0;
+  padding: 0 48px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 300%;
+  text-align: center;
+}
+/* line 24, ../sass/screen.scss */
 .deck-container .deck-status {
   font-size: 1.3em;
   bottom: 20px;
   right: 20px;
 }
-/* line 20, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 .deck-container .slide-footer {
   position: absolute;
   bottom: 20px;
@@ -24,12 +35,12 @@
   line-height: 42px;
 }
 
-/* line 31, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 .deck-menu .slide-footer {
   background: none;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .deck-container section.slide {
   background: none repeat scroll 0 0 white;
   border-left: 1px solid #CCCCCC;
@@ -39,17 +50,17 @@
   text-shadow: none;
 }
 
-/* line 44, ../sass/screen.scss */
+/* line 54, ../sass/screen.scss */
 #toc .H2 {
   margin-left: 20px;
   list-style: circle outside none;
 }
-/* line 48, ../sass/screen.scss */
+/* line 58, ../sass/screen.scss */
 #toc a {
   color: black;
 }
 
-/* line 53, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 .caption {
   font-style: italic;
   font-variant: small-caps;
@@ -57,7 +68,7 @@
   padding-top: -10px;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 .deck-container pre {
   border: 1px solid #999999;
   border-radius: 0;
@@ -126,6 +137,11 @@ h2, h1 {
 .test-output strong.green {
   color: #0d8800;
   font-weight: normal;
+}
+
+/* line 47, ../sass/_tdd.scss */
+strong.highlight {
+  background: #ffff66;
 }
 
 /* line 1, ../sass/syntax/colorful.scss */
@@ -614,17 +630,52 @@ h2, h1 {
   font-style: normal;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .highlight pre {
   font-family: "UbuntuMonoRegular", monospace;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 .highlight {
   background: transparent;
 }
 
-/* line 74, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .deck-container h1, .deck-container h2 {
   font-family: "GabrielleRegular", "Hoefler Text",Constantia,Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif;
+}
+
+/* line 89, ../sass/screen.scss */
+.deck-container section h1 {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f3f3f3), color-stop(100%, #e3e3e3));
+  background-image: -webkit-linear-gradient(#f3f3f3, #e3e3e3);
+  background-image: -moz-linear-gradient(#f3f3f3, #e3e3e3);
+  background-image: -o-linear-gradient(#f3f3f3, #e3e3e3);
+  background-image: -ms-linear-gradient(#f3f3f3, #e3e3e3);
+  background-image: linear-gradient(#f3f3f3, #e3e3e3);
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+/* line 94, ../sass/screen.scss */
+.side-image {
+  float: right;
+  margin: 20px;
+}
+/* line 97, ../sass/screen.scss */
+.side-image .caption {
+  border-top: 1px solid #999;
+}
+
+/* line 101, ../sass/screen.scss */
+.image-list {
+  padding: 10px;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+/* line 102, ../sass/screen.scss */
+.image-list img {
+  display: inline;
+  padding: 0 10px;
 }

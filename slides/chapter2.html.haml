@@ -1,15 +1,86 @@
-%section.slide.toc
+%section.slide.toc#theoretisch
   %h1 Theoretische Grundlagen
 
-%section.slide.toc
-  %h2 Automatisierter dynamischer Test
-  %ul
-    %li Automatisiert - manuell
-    %li dynamisch - statisch
-    %li Test
+%section.slide
+  %h2.subtitle
+    Testgetriebene Entwicklung
+    %br
+    von Webserver-Anwendungen
+    %br
+    auf Basis von <u>Ruby on Rails</u>
+
+%section.slide
+  %h1 Ruby &amp; Rails
 
 %section.slide.toc
-  %h2 TDD - Testgetriebene Entwicklung
+  %h2 Ruby
+  = image_tag_with_caption "imgs/ruby.gif",  "ruby-lang.org", "side-image"
+  %ul
+    %li Yukihiro Matsumoto, 1995 v.0.95, 2011 v.1.9.3
+    %li Vielzahl von Implementierungen: MRI, JRuby, Rubininus, <strike>IronRuby</strike>, Blue Ruby
+    %li Anstehende ISO-Standardisierung (ISO/IEC 30170)
+
+    / Lesbarkeit, hohes Ziel
+%section.slide
+  %h2 Features
+  %ul
+    %li dynamisch typisierte Sprache (Skriptsprache)
+    %li Paradigmen: OOP, funktional, prozedural
+    %li <em>meta programming</em> &rarr; generische Programmierung
+    %li Reflexion, interne DSL, Mixins/Module, Duck-Typing
+    / erlaubt sehr generische und platzsparende Programmierung
+    %li
+      Ziel: Sprache für Menschen, nicht (nur) Maschinen
+      %ul.slide
+        %li Wenige Sonderzeichen
+        %li
+          Sprechende Syntax, z.B.
+          =pygmentize "ruby" do
+            :plain
+              5.times do
+                run_program
+              end
+
+/ Zu ruby man ebenfalls mehrere Vortraege halten
+%section.slide
+  %h2 Ruby on Rails
+  / Etwas ueber Rails sagen: 2006?
+  / MVC Web-Framework. Unterst
+  %ul
+    %li Full-Stack Framework
+    / Webserver, Templating, Datenbankengine
+    %li Konzepte: MVC-Muster, DRY, Convention over Configuration
+    / was ist CoC, Beispiel, DRY -> Definition der Spalten
+    %li Gems
+    / Große Auswahl von Gems in einer aktiven Community -> Github Forks
+    %li Testen hoch priorisiert
+    / Testen hat in der RoR C einen hohen Stellenwert
+    / Testtools liegen schon bei
+
+
+%section.slide
+  %h2.subtitle
+    <u>Testgetriebene Entwicklung</u>
+    %br
+    von Webserver-Anwendungen
+    %br
+    auf Basis von Ruby on Rails
+
+%section.slide.toc
+  %h2 Automatisierte dynamischer Software-Test
+  %blockquote(cite="http://oxforddictionaries.com/definition/test")
+    %p to test: take measures to check the quality, performance, or reliability of sth. [...]
+    %cite Oxford Dictionary
+  %ul
+    / Was ist test? Spezif. von Erwartungen
+    %li Automatisiert &ndash; manuell
+    / Test wird vollstaendig vom Computer ausgefuehrt -> Geschwindigkeitsgewinn
+    %li dynamisch &ndash; statisch
+    / Programmcode wird ausgefuehrt, oder geskriptet, anst
+    %li Unittest für TDD relevant
+
+%section.slide.toc
+  %h2 Testgetriebene Entwicklung (TDD)
   %ul
     %li iterative Entwicklungstechnik
     %li bekannt durch eXtreme Programming (XP)
@@ -17,11 +88,12 @@
 %section.slide.red#red
   %h2 Red
 
-
   =pygmentize "ruby" do
     :plain
-      def test_addition
-        assert_equal 3, Adder.add(1,2)
+      class TestAdder &lt; Test::Unit::TestCase
+        def test_addition
+          assert_equal 3, Adder.add(1,2)
+        end
       end
   %pre.test-output
     :preserve
@@ -59,9 +131,7 @@
   =pygmentize "ruby" do
     :plain
       def self.add(*args)
-        args.inject(0) do |sum, item|
-          sum + item
-        end
+        args.sum
       end
 
 
@@ -72,41 +142,6 @@
 
 %section.slide
   %h2 Vorteile
-
-%section.slide
-  %h1 Ruby &amp; Rails
-
-%section.slide.toc
-  %h2 Ruby
-  %ul
-    %li Yukihiro Matsumoto, 1995 v.0.95, 2011 v.1.9.3
-    %li Vielzahl von Implementierungen: MRI, JRuby, Rubininus, <strike>IronRuby</strike>, Blue Ruby
-    %li Anstehende ISO-Standardisierung (ISO/IEC 30170)
-    %li Ziel: Sprache für Menschen, nicht (nur) Maschinen
-    / Lesbarkeit, hohes Ziel
-%section.slide
-  %h2 Features
-  %ul
-    %li dynamisch typisierte Sprache (Skriptsprache)
-    %li OOP, funktional, prozedural
-    %li <i>meta programming</i> &rarr; Erweiterung von Klassen zur Laufzeit
-    / erlaubt sehr generische und platzsparende Programmierung
-
-%section.slide
-  %h2 Rails
-  / Etwas ueber Rails sagen: 2006?
-  / MVC Web-Framework. Unterst
-  %ul
-    %li Konzepte: MVC-Muster, DRY, Convention over Configuration
-    / was ist CoC, Beispiel, DRY -> Definition der Spalten
-    %li Full-Stack Framework
-    / Webserver, Templating, Datenbankengine
-    %li Gems
-    / Große Auswahl von Gems in einer aktiven Community -> Github Forks
-    %li Testen hoch priorisiert
-    / Testen hat in der RoR C einen hohen Stellenwert
-    / Testtools liegen schon bei
-
 
 
 

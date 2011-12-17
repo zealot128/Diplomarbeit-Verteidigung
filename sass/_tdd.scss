@@ -4,7 +4,7 @@ $red: #bf3030;
 $green: #0d8800;
 $refactor: #666670;
 h2, h1 {
-      text-shadow: 0px -1px #444;
+  text-shadow: 0px -1px #444;
 }
 
 .deck-container {
@@ -43,4 +43,7 @@ h2, h1 {
     color: #0d8800;
     font-weight: normal;
   }
+}
+strong.highlight {
+  background: lighten(yellow,20%);
 }
