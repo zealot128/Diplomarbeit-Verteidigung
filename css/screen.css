@@ -122,21 +122,26 @@ h2, h1 {
   color: white;
 }
 
-/* line 35, ../sass/_tdd.scss */
+/* line 34, ../sass/_tdd.scss */
+#tdd .image-wrap {
+  padding-top: 50px;
+}
+
+/* line 38, ../sass/_tdd.scss */
 #circle img {
   max-height: 500px;
 }
 
-/* line 39, ../sass/_tdd.scss */
+/* line 42, ../sass/_tdd.scss */
 .test-output {
   font-size: 90%;
 }
-/* line 41, ../sass/_tdd.scss */
+/* line 44, ../sass/_tdd.scss */
 .test-output strong.red {
   color: #bf3030;
   font-weight: normal;
 }
-/* line 45, ../sass/_tdd.scss */
+/* line 48, ../sass/_tdd.scss */
 .test-output strong.green {
   color: #0d8800;
   font-weight: normal;
