@@ -90,7 +90,7 @@ auf Basis von <u>Ruby on Rails</u>
 <div class='image-wrap side-image'><img src='imgs/ruby.gif'/><div class='caption'>ruby-lang.org</div></div>
 <ul>
 <li>Yukihiro Matsumoto, 1995 v.0.95, 2011 v.1.9.3</li>
-<li>Vielzahl von Implementierungen: MRI, JRuby, Rubininus, <strike>IronRuby</strike>, Blue Ruby</li>
+<li>Vielzahl von Implementierungen: MRI, JRuby, Rubininus, <strike>IronRuby</strike>, BlueRuby</li>
 <li>Anstehende ISO-Standardisierung (ISO/IEC 30170)</li>
 <!-- Lesbarkeit, hohes Ziel -->
 </ul>
@@ -101,7 +101,7 @@ auf Basis von <u>Ruby on Rails</u>
 <li>dynamisch typisierte Sprache (Skriptsprache)</li>
 <li>Paradigmen: OOP, funktional, prozedural</li>
 <li><em>meta programming</em> &rarr; generische Programmierung</li>
-<li>Reflexion, interne DSL, Mixins/Module, Duck-Typing</li>
+<li>Buzzwords: Reflexion, interne DSL, Mixins/Module, Duck-Typing, Continuations...</li>
 <!-- erlaubt sehr generische und platzsparende Programmierung -->
 <li>
 Ziel: Sprache für Menschen, nicht (nur) Maschinen
@@ -124,7 +124,7 @@ Sprechende Syntax, z.B.
 <!-- Etwas ueber Rails sagen: 2006? -->
 <!-- MVC Web-Framework. Unterst -->
 <ul>
-<li>Full-Stack Framework</li>
+<li>Full-Stack Framework: Webserver, Datenbankabstraktion, Templating, Testframework, Routing</li>
 <!-- Webserver, Templating, Datenbankengine -->
 <li>Konzepte: MVC-Muster, DRY, Convention over Configuration</li>
 <!-- was ist CoC, Beispiel, DRY -> Definition der Spalten -->
@@ -145,11 +145,14 @@ auf Basis von Ruby on Rails
 </h2>
 </section>
 <section class='slide toc'>
-<h2>Automatisierte dynamischer Software-Test</h2>
+<h2>Test</h2>
 <blockquote cite='http://oxforddictionaries.com/definition/test'>
 <p>to test: take measures to check the quality, performance, or reliability of sth. [...]</p>
 <cite>Oxford Dictionary</cite>
 </blockquote>
+</section>
+<section class='slide'>
+<h2>Automatisierte dynamischer Software-Test</h2>
 <ul>
 <!-- Was ist test? Spezif. von Erwartungen -->
 <li>Automatisiert &ndash; manuell</li>
@@ -159,22 +162,25 @@ auf Basis von Ruby on Rails
 <li>Unittest für TDD relevant</li>
 </ul>
 </section>
-<section class='slide' id='tdd'>
-<div class='image-wrap normal-image'><img src='imgs/TestDrivenDevelopment_155FE599.png'/><div class='caption'>LosTechies.com</div></div>
-</section>
 <section class='slide toc'>
 <h2>Testgetriebene Entwicklung (TDD)</h2>
 <ul>
 <li>iterative Entwicklungstechnik</li>
 <li>bekannt durch eXtreme Programming (XP)</li>
+<li>
+Ablauf
+<ol>
+<li>Test schreiben, der fehlschlägt</li>
+<li>Einfachste Implementation zum Bestehen des Tests</li>
+<li>Refaktorisieren</li>
+</ol>
+</li>
 </ul>
 </section>
 <section class='slide red' id='red'>
 <h2>Red</h2>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">TestAdder</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">Test</span><span class="o">::</span><span class="no">Unit</span><span class="o">::</span><span class="no">TestCase</span>
-  <span class="k">def</span> <span class="nf">test_addition</span>
-    <span class="n">assert_equal</span> <span class="mi">3</span><span class="p">,</span> <span class="no">Adder</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-  <span class="k">end</span>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">test_addition</span>
+  <span class="n">assert_equal</span> <span class="mi">3</span><span class="p">,</span> <span class="no">Adder</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="k">end</span>
 </pre></div>
 <pre class='test-output'>1) Error:&#x000A;test_addition(TestAdder):&#x000A;NameError: uninitialized constant TestAdder::Adder&#x000A;./test/test_adder.rb:3:in `test_addition'&#x000A;<strong class='red'>1 tests, 0 assertions, 0 failures, 1 errors</strong>&#x000A;</pre>
@@ -197,10 +203,12 @@ auf Basis von Ruby on Rails
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
+<div class='slide'>
 <div class="highlight"><pre><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
   <span class="n">args</span><span class="o">.</span><span class="n">sum</span>
 <span class="k">end</span>
 </pre></div>
+</div>
 </section>
 <section class='slide' id='circle'>
 <h2>Kreislauf</h2>
@@ -216,12 +224,38 @@ auf Basis von Ruby on Rails
 </ul>
 </section>
 
+
 <section class='slide toc' id='results'>
 <h1>Ergebnisse</h1>
 </section>
+<section class='slide toc'>
+<h2>Status der Entwicklung</h2>
+<ul>
+<li>Entwicklung von www.it-jobs-und-stellen.de nicht abgeschlossen &rarr; Repriorisierung</li>
+<li>
+Allerdings signifikante Teile extrahiert und in Produktion:
+<ul>
+<li>Feedimport</li>
+<li>Stellensuche (www.empfehlungsbund.de)</li>
+</ul>
+</li>
+</ul>
+</section>
+<section class='slide'>
+<h2>Testabdeckung</h2>
+<img src='imgs/coverage.png'/>
+</section>
+<section class='slide'>
+<h2>Codemenge</h2>
+<img src='imgs/loclot.png'/>
+</section>
+<section class='slide'>
+<h2>Smells</h2>
+<img src='imgs/itjobs-smells.png'/>
+</section>
 <section class='slide toc' id='benchmark'>
 <h2>Benchmark</h2>
-Hello
+<img src='imgs/complexity.png'/>
 </section>
 
 <section class='slide toc' id='fazit'>
@@ -229,9 +263,60 @@ Hello
 </section>
 <section class='slide'>
 <h2>Lessons learned</h2>
+<ul>
+<li>Anfangs hohe Disziplin notwendig</li>
+<li>Wissen und Erfahrung notwendig über Software-Design</li>
+<li>
+Einige Sachverhalte scheinbar nicht testbar (&rarr; Test-Doubles),
+<br />
+manche Aspekte nicht testbar (Usability, Sicherheit, Nebenläufigkeit)
+</li>
+<li>Code-Qualität der Tests enscheidend für langfristigen Erfolg</li>
+<li>Kein Allheilmittel</li>
+</ul>
+</section>
+<section class='slide'>
+<h2>Aussagen</h2>
+<ul>
+<li>Studien und Erfahrung aus der Arbeit &rarr; besserer Code beim Einsatz von TDD</li>
+<li>Effektivität abhängig von vorhanden Werkzeugen: parallelisierbare Testrunner, Code-Metriken, Test-Frameworks, Autotest-Runner</li>
+<li>Ruby on Rails für (testgetriebene) Web-Anwendungen ideal</li>
+<li>
+<strong>relevante Entwicklungstechnik, die jeder Programmierer lernen (und üben) sollte</strong>
+</li>
+</ul>
 </section>
 <section class='slide'>
 <h2>Ausblick</h2>
+<ul>
+<li>Akzeptanztests als treibende Kraft (ATTD)</li>
+<li>Sammlung von typischen Kennzahlen von Rails-Projekten als Benchmark.</li>
+<li>psychologische Auswirkungen von TDD &rarr; kleine Belohnungen, fast wie ein Spiel</li>
+<li>weitere Fallstudien zu TDD mit anderen Programmierplattformen</li>
+</ul>
+</section>
+<section class='slide'>
+<h1>Fragen?</h1>
+</section>
+
+<section class='slide'>
+<h1>Appendix</h1>
+</section>
+<section class='slide'>
+<h2>Prinzip des Empfehlungssystems</h2>
+<div class='image-wrap normal-image'><img src='imgs/empfehlungscode.png'/><div class='caption'></div></div>
+</section>
+<section class='slide'>
+<h2>MVC von Rails</h2>
+<div class='image-wrap normal-image'><img src='imgs/mvc.png'/><div class='caption'></div></div>
+</section>
+<section class='slide'>
+<h2>Ablauf TDD+Design</h2>
+<div class='image-wrap normal-image'><img src='ablauf.png'/><div class='caption'></div></div>
+</section>
+<section class='slide'>
+<h2>Tests</h2>
+<div class='image-wrap normal-image'><img src='testarten.png'/><div class='caption'></div></div>
 </section>
 
 

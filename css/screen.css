@@ -706,16 +706,16 @@ strong.highlight {
 
 /* line 92, ../sass/screen.scss */
 .deck-container {
-  font-family: "MyndraineRegular";
+  font-family: "Calibri","MyndraineRegular", sans-serif;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc), color-stop(100%, #666666));
-  background-image: -webkit-linear-gradient(top, #cccccc, #666666);
-  background-image: -moz-linear-gradient(top, #cccccc, #666666);
-  background-image: -o-linear-gradient(top, #cccccc, #666666);
-  background-image: -ms-linear-gradient(top, #cccccc, #666666);
-  background-image: linear-gradient(top, #cccccc, #666666);
+  background-image: -webkit-linear-gradient(#cccccc, #666666);
+  background-image: -moz-linear-gradient(#cccccc, #666666);
+  background-image: -o-linear-gradient(#cccccc, #666666);
+  background-image: -ms-linear-gradient(#cccccc, #666666);
+  background-image: linear-gradient(#cccccc, #666666);
 }
 
-/* line 98, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .deck-container section h1 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f3f3f3), color-stop(100%, #e3e3e3));
   background-image: -webkit-linear-gradient(#f3f3f3, #e3e3e3);
@@ -727,25 +727,31 @@ strong.highlight {
   border-top: 1px solid #ddd;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 .side-image {
   float: right;
   margin: 20px;
 }
-/* line 106, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 .side-image .caption {
   border-top: 1px solid #999;
 }
 
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .image-list {
   padding: 10px;
   display: block;
   margin: auto;
   text-align: center;
 }
-/* line 111, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .image-list img {
   display: inline;
   padding: 0 10px;
+}
+
+/* line 118, ../sass/screen.scss */
+.cssreflections .deck-container h2 {
+  -webkit-box-reflect: none;
+  -moz-box-reflect: none;
 }

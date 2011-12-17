@@ -3,6 +3,7 @@ module PresentationHelper
   def image_tag_with_caption(img_path, caption, klass="normal-image")
     "<div class='image-wrap #{klass}'><img src='#{img_path}'/><div class='caption'>#{caption}</div></div>"
   end
+
   def pygmentize(lexer,&block)
     text = capture_haml do
       yield
@@ -23,6 +24,10 @@ module PresentationHelper
     FileUtils.mkdir_p(".pygments-cache")
     File.open(filename,"w+") {|f| f.write(result)}
     result
+  end
+
+  def image_tag(path)
+    "<img src='imgs/#{path}'/>"
   end
 
 end

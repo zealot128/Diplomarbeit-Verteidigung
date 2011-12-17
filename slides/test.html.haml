@@ -1,0 +1,97 @@
+%section.slide
+  %h2.subtitle
+    <u>Testgetriebene Entwicklung</u>
+    %br
+    von Webserver-Anwendungen
+    %br
+    auf Basis von Ruby on Rails
+
+%section.slide.toc
+  %h2 Test
+  %blockquote(cite="http://oxforddictionaries.com/definition/test")
+    %p to test: take measures to check the quality, performance, or reliability of sth. [...]
+    %cite Oxford Dictionary
+%section.slide
+  %h2 Automatisierte dynamischer Software-Test
+  %ul
+    / Was ist test? Spezif. von Erwartungen
+    %li Automatisiert &ndash; manuell
+    / Test wird vollstaendig vom Computer ausgefuehrt -> Geschwindigkeitsgewinn
+    %li dynamisch &ndash; statisch
+    / Programmcode wird ausgefuehrt, oder geskriptet, anst
+    %li Unittest für TDD relevant
+
+%section.slide.toc
+  %h2 Testgetriebene Entwicklung (TDD)
+  %ul
+    %li iterative Entwicklungstechnik
+    %li bekannt durch eXtreme Programming (XP)
+    %li
+      Ablauf
+      %ol
+        %li Test schreiben, der fehlschlägt
+        %li Einfachste Implementation zum Bestehen des Tests
+        %li Refaktorisieren
+
+%section.slide.red#red
+  %h2 Red
+
+  =pygmentize "ruby" do
+    :plain
+      def test_addition
+        assert_equal 3, Adder.add(1,2)
+      end
+  %pre.test-output
+    :preserve
+      1) Error:
+      test_addition(TestAdder):
+      NameError: uninitialized constant TestAdder::Adder
+      ./test/test_adder.rb:3:in `test_addition'
+      <strong class='red'>1 tests, 0 assertions, 0 failures, 1 errors</strong>
+
+%section.slide.green#green
+  %h2 Green
+  =pygmentize "ruby" do
+    :plain
+      class Adder
+        def self.add(a,b)
+          return 3
+        end
+      end
+  %pre.test-output
+    :preserve
+      Finished in 0.000342 seconds.
+
+      <strong class='green'>1 tests, 1 assertions, 0 failures, 0 errors</strong>
+
+
+%section.slide.refactor#refactor
+  %h2 Refactor
+  =pygmentize "ruby" do
+    :plain
+      class Adder
+        def self.add(a,b)
+          a + b
+        end
+      end
+  .slide
+    =pygmentize "ruby" do
+      :plain
+        def self.add(*args)
+          args.sum
+        end
+
+
+
+%section.slide#circle
+  %h2 Kreislauf
+  = image_tag_with_caption "imgs/rgr.jpg",  "Agile in a Flash"
+
+%section.slide
+  %h2 Vorteile
+  %ul
+    %li Code und Test entstehen im Einklang
+    %li &rarr; übersichtlichere Methoden
+    %li von Stunde 0 an hohe Testabdeckung
+    %li ermöglicht sichere Refaktorisierungen
+

@@ -90,9 +90,10 @@ $logo-width: 120px;
   }
 }
 .deck-container {
-  font-family: "MyndraineRegular";
+  font-family: "Calibri","MyndraineRegular", sans-serif;
 //, "QlassikMediumRegular";
-  @include linear-gradient(color-stops(#ccc, #666));
+   @include background-image(linear-gradient(#cccccc, #666666))
+
 }
 
 .deck-container section h1 {
@@ -113,4 +114,8 @@ $logo-width: 120px;
   display: block;
   margin: auto;
   text-align: center;
+}
+.cssreflections .deck-container h2 {
+    -webkit-box-reflect: none;
+    -moz-box-reflect: none;
 }
