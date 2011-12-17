@@ -4,9 +4,11 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 /* line 10, ../sass/screen.scss */
 .deck-container #title-slide h1 .subtitle {
-  font-size: 50%;
+  font-family: TeXGyreBonumRegular;
+  font-size: 20px;
+  font-weight: normal;
 }
-/* line 13, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 .deck-container h2.subtitle {
   -moz-transform: translate(0pt, -50%);
   left: 0;
@@ -17,13 +19,13 @@
   font-size: 300%;
   text-align: center;
 }
-/* line 24, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 .deck-container .deck-status {
   font-size: 1.3em;
   bottom: 20px;
   right: 20px;
 }
-/* line 30, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 .deck-container .slide-footer {
   position: absolute;
   bottom: 20px;
@@ -35,12 +37,12 @@
   line-height: 42px;
 }
 
-/* line 41, ../sass/screen.scss */
+/* line 43, ../sass/screen.scss */
 .deck-menu .slide-footer {
   background: none;
 }
 
-/* line 44, ../sass/screen.scss */
+/* line 46, ../sass/screen.scss */
 .deck-container section.slide {
   background: none repeat scroll 0 0 white;
   border-left: 1px solid #CCCCCC;
@@ -50,17 +52,17 @@
   text-shadow: none;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 #toc .H2 {
   margin-left: 20px;
   list-style: circle outside none;
 }
-/* line 58, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 #toc a {
   color: black;
 }
 
-/* line 63, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 .caption {
   font-style: italic;
   font-variant: small-caps;
@@ -68,7 +70,7 @@
   padding-top: -10px;
 }
 
-/* line 69, ../sass/screen.scss */
+/* line 71, ../sass/screen.scss */
 .deck-container pre {
   border: 1px solid #999999;
   border-radius: 0;
@@ -98,7 +100,11 @@ h2, h1 {
   background-image: -ms-linear-gradient(#bf3030, #962626);
   background-image: linear-gradient(#bf3030, #962626);
 }
-/* line 22, ../sass/_tdd.scss */
+/* line 21, ../sass/_tdd.scss */
+.deck-container section.slide.red .slide-footer {
+  color: white;
+}
+/* line 23, ../sass/_tdd.scss */
 .deck-container section.slide.green {
   background: #0d8800;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0d8800), color-stop(100%, #085500));
@@ -109,6 +115,10 @@ h2, h1 {
   background-image: linear-gradient(#0d8800, #085500);
 }
 /* line 26, ../sass/_tdd.scss */
+.deck-container section.slide.green .slide-footer {
+  color: white;
+}
+/* line 28, ../sass/_tdd.scss */
 .deck-container section.slide.refactor {
   background: #666670;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #666670), color-stop(100%, #4e4e55));
@@ -118,28 +128,37 @@ h2, h1 {
   background-image: -ms-linear-gradient(#666670, #4e4e55);
   background-image: linear-gradient(#666670, #4e4e55);
 }
+/* line 31, ../sass/_tdd.scss */
+.deck-container section.slide.refactor .slide-footer {
+  color: white;
+}
 
-/* line 32, ../sass/_tdd.scss */
+/* line 34, ../sass/_tdd.scss */
+#tdd .image-wrap {
+  padding-top: 50px;
+}
+
+/* line 38, ../sass/_tdd.scss */
 #circle img {
   max-height: 500px;
 }
 
-/* line 36, ../sass/_tdd.scss */
+/* line 42, ../sass/_tdd.scss */
 .test-output {
   font-size: 90%;
 }
-/* line 38, ../sass/_tdd.scss */
+/* line 44, ../sass/_tdd.scss */
 .test-output strong.red {
   color: #bf3030;
   font-weight: normal;
 }
-/* line 42, ../sass/_tdd.scss */
+/* line 48, ../sass/_tdd.scss */
 .test-output strong.green {
   color: #0d8800;
   font-weight: normal;
 }
 
-/* line 47, ../sass/_tdd.scss */
+/* line 53, ../sass/_tdd.scss */
 strong.highlight {
   background: #ffff66;
 }
@@ -630,22 +649,73 @@ strong.highlight {
   font-style: normal;
 }
 
-/* line 77, ../sass/screen.scss */
-.highlight pre {
+@font-face {
+  font-family: 'M1cregular';
+  src: url("fonts/gabrielle/mplus-1c-regular-webfont.eot");
+  src: url("fonts/gabrielle/mplus-1c-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/gabrielle/mplus-1c-regular-webfont.woff") format("woff"), url("fonts/gabrielle/mplus-1c-regular-webfont.ttf") format("truetype"), url("fonts/gabrielle/mplus-1c-regular-webfont.svg#M1cregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'M1cmedium';
+  src: url("fonts/m1c/mplus-1c-medium-webfont.eot");
+  src: url("fonts/m1c/mplus-1c-medium-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/m1c/mplus-1c-medium-webfont.woff") format("woff"), url("fonts/m1c/mplus-1c-medium-webfont.ttf") format("truetype"), url("fonts/m1c/mplus-1c-medium-webfont.svg#M1cmedium") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'QlassikMediumRegular';
+  src: url("fonts/qlassik/Qlassik_TB-webfont.eot");
+  src: url("fonts/qlassik/Qlassik_TB-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/qlassik/Qlassik_TB-webfont.woff") format("woff"), url("fonts/qlassik/Qlassik_TB-webfont.ttf") format("truetype"), url("fonts/qlassik/Qlassik_TB-webfont.svg#QlassikMediumRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'QlassikBoldRegular';
+  src: url("fonts/qlassik/QlassikBold_TB-webfont.eot");
+  src: url("fonts/qlassik/QlassikBold_TB-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/qlassik/QlassikBold_TB-webfont.woff") format("woff"), url("fonts/qlassik/QlassikBold_TB-webfont.ttf") format("truetype"), url("fonts/qlassik/QlassikBold_TB-webfont.svg#QlassikBoldRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyndraineRegular';
+  src: url("fonts/myndraine/Myndraine-webfont.eot");
+  src: url("fonts/myndraine/Myndraine-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/myndraine/Myndraine-webfont.woff") format("woff"), url("fonts/myndraine/Myndraine-webfont.ttf") format("truetype"), url("fonts/myndraine/Myndraine-webfont.svg#MyndraineRegular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 81, ../sass/screen.scss */
+.highlight pre, .deck-container pre {
   font-family: "UbuntuMonoRegular", monospace;
 }
 
-/* line 80, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .highlight {
   background: transparent;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 .deck-container h1, .deck-container h2 {
   font-family: "GabrielleRegular", "Hoefler Text",Constantia,Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif;
 }
 
-/* line 89, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
+.deck-container {
+  font-family: "MyndraineRegular";
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc), color-stop(100%, #666666));
+  background-image: -webkit-linear-gradient(top, #cccccc, #666666);
+  background-image: -moz-linear-gradient(top, #cccccc, #666666);
+  background-image: -o-linear-gradient(top, #cccccc, #666666);
+  background-image: -ms-linear-gradient(top, #cccccc, #666666);
+  background-image: linear-gradient(top, #cccccc, #666666);
+}
+
+/* line 98, ../sass/screen.scss */
 .deck-container section h1 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f3f3f3), color-stop(100%, #e3e3e3));
   background-image: -webkit-linear-gradient(#f3f3f3, #e3e3e3);
@@ -657,24 +727,24 @@ strong.highlight {
   border-top: 1px solid #ddd;
 }
 
-/* line 94, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 .side-image {
   float: right;
   margin: 20px;
 }
-/* line 97, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .side-image .caption {
   border-top: 1px solid #999;
 }
 
-/* line 101, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .image-list {
   padding: 10px;
   display: block;
   margin: auto;
   text-align: center;
 }
-/* line 102, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .image-list img {
   display: inline;
   padding: 0 10px;

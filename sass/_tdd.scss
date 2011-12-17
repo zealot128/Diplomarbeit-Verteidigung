@@ -18,15 +18,21 @@ h2, h1 {
   section.slide.red {
     background: #bf3030;
     @include background-image(linear-gradient(color-stops($red,darken($red,10%))));
+    .slide-footer {color: white}
   }
   section.slide.green {
     background: #0d8800;
     @include background-image(linear-gradient(color-stops($green,darken($green,10%))));
+    .slide-footer {color: white}
   }
   section.slide.refactor {
     background: #666670;
     @include background-image(linear-gradient(color-stops($refactor,darken($refactor,10%))));
+    .slide-footer {color: white}
   }
+}
+#tdd .image-wrap {
+  padding-top: 50px;
 }
 
 #circle img {
