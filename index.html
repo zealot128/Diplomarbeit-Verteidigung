@@ -48,7 +48,7 @@ Verteidigung
 <h2>Die pludoni GmbH</h2>
 <ul>
 <li>2008 gegründet</li>
-<li>Kunden hauptsächlich KMU</li>
+<li>unterstützt KMU bei Personalarbeit, Fachkräftegewinnung</li>
 <li>bietet Plattformen und Rahmenbedingungen für Bewerberempfehlungen</li>
 <li>z.B. ITsax.de, ITmitte.de und MINTsax.de</li>
 </ul>
@@ -61,19 +61,17 @@ Verteidigung
 <section class='slide'>
 <h2>Motivation</h2>
 <ul>
-<li>(Legacy-) Code verschiedener Programmierer</li>
 <li>kleines Team &rarr; begrenzte Ressourcen für QM-QS</li>
-<li>Tests im Nachhinein sehr aufwändig</li>
 <li>zunehmene Komplexität, wenige Tests &rarr; Regressionsfehler</li>
 </ul>
 </section>
 <section class='slide'>
-<h2>Fragestellung</h2>
+<h2>Fragestellungen</h2>
 <ul class='slide'>
 <li>
 Testgetriebene Entwicklung
 <ul>
-<li>Effektive Möglichkeit zur Qualitätssicherung?</li>
+<li>Effiziente Möglichkeit zur Qualitätssicherung?</li>
 <li>Code-Qualität nachhaltig verbessert?</li>
 <li>Ruby/Rails geeignet?</li>
 </ul>
@@ -101,8 +99,8 @@ auf Basis von <u>Ruby on Rails</u>
 <div class='image-wrap side-image'><img src='imgs/ruby.gif'/><div class='caption'>ruby-lang.org</div></div>
 <ul>
 <li>Yukihiro Matsumoto, 1995 v.0.95, 2011 v.1.9.3</li>
-<li>Vielzahl von Implementierungen: MRI, JRuby, Rubininus, <strike>IronRuby</strike>, BlueRuby</li>
-<li>Anstehende ISO-Standardisierung (ISO/IEC 30170)</li>
+<li>Vielzahl von Implementierungen: MRI, JRuby, BlueRuby, Rubininus, <strike>IronRuby</strike></li>
+<li>ISO-Standardisierung (ISO/IEC 30170)</li>
 <!-- Lesbarkeit, hohes Ziel -->
 </ul>
 </section>
@@ -112,7 +110,7 @@ auf Basis von <u>Ruby on Rails</u>
 <li>dynamisch typisierte Sprache (Skriptsprache)</li>
 <li>Paradigmen: OOP, funktional, prozedural</li>
 <li><em>meta programming</em> &rarr; generische Programmierung</li>
-<li>Buzzwords: Reflexion, interne DSL, Mixins/Module, Duck-Typing, Continuations...</li>
+<li>Buzzwords: Reflexion, Mixins/Module, Duck-Typing, Continuations...</li>
 <!-- erlaubt sehr generische und platzsparende Programmierung -->
 <li>
 Ziel: Sprache für Menschen, nicht (nur) Maschinen
@@ -138,9 +136,9 @@ Sprechende Syntax, z.B.
 <ul>
 <li>Full-Stack Framework: Webserver, Datenbankabstraktion, Templating, Testframework, Routing</li>
 <!-- Webserver, Templating, Datenbankengine -->
-<li>Konzepte: MVC-Muster, DRY, Convention over Configuration</li>
+<li>Konzepte: MVC-Muster, Convention over Configuration</li>
 <!-- was ist CoC, Beispiel, DRY -> Definition der Spalten -->
-<li>Gems</li>
+<li>Paketverwaltung RubyGems</li>
 <!-- Große Auswahl von Gems in einer aktiven Community -> Github Forks -->
 <li>Testen hoch priorisiert</li>
 <!-- Testen hat in der RoR C einen hohen Stellenwert -->
@@ -241,7 +239,8 @@ Ablauf
 </section>
 <section class='slide refactor'>
 <h2>Green</h2>
-<div class="highlight"><pre><span class="k">class</span> <span class="nc">Adder</span>
+<div class="highlight"><pre><span class="nb">require</span> <span class="s2">&quot;active_support/core_ext/enumerable.rb&quot;</span>
+<span class="k">class</span> <span class="nc">Adder</span>
   <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
     <span class="n">args</span><span class="o">.</span><span class="n">sum</span>
   <span class="k">end</span>

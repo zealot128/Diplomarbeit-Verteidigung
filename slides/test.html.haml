@@ -112,6 +112,7 @@
   %h2 Green
   =pygmentize "ruby" do
     :plain
+      require "active_support/core_ext/enumerable.rb"
       class Adder
         def self.add(*args)
           args.sum
