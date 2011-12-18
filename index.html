@@ -61,12 +61,23 @@ Verteidigung
 <section class='slide'>
 <h2>Motivation</h2>
 <ul>
-<li>Verteiltes und asynchrones Arbeiten</li>
-<li>Legacy-Code verschiedener Programmierer</li>
+<li>(Legacy-) Code verschiedener Programmierer</li>
+<li>kleines Team &rarr; begrenzte Ressourcen für QM-QS</li>
+<li>Tests im Nachhinein sehr aufwändig</li>
 <li>zunehmene Komplexität, wenige Tests &rarr; Regressionsfehler</li>
 </ul>
+</section>
+<section class='slide'>
+<h2>Fragestellung</h2>
 <ul class='slide'>
-<li>Testgetriebene Entwicklung</li>
+<li>
+Testgetriebene Entwicklung
+<ul>
+<li>Effektive Möglichkeit zur Qualitätssicherung?</li>
+<li>Code-Qualität nachhaltig verbessert?</li>
+<li>Ruby/Rails geeignet?</li>
+</ul>
+</li>
 </ul>
 </section>
 
@@ -120,6 +131,7 @@ Sprechende Syntax, z.B.
 </section>
 <!-- Zu ruby man ebenfalls mehrere Vortraege halten -->
 <section class='slide'>
+<div class='image-wrap side-image'><img src='imgs/rails.png'/><div class='caption'>rubyonrails.org</div></div>
 <h2>Ruby on Rails</h2>
 <!-- Etwas ueber Rails sagen: 2006? -->
 <!-- MVC Web-Framework. Unterst -->
@@ -193,7 +205,7 @@ Ablauf
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-<pre class='test-output'>Finished in 0.000342 seconds.&#x000A;&#x000A;<strong class='green'>1 tests, 1 assertions, 0 failures, 0 errors</strong>&#x000A;&#x000A;</pre>
+<pre class='test-output'><strong class='green'>1 tests, 1 assertions, 0 failures, 0 errors</strong>&#x000A;&#x000A;</pre>
 </section>
 <section class='slide refactor' id='refactor'>
 <h2>Refactor</h2>
@@ -203,24 +215,53 @@ Ablauf
   <span class="k">end</span>
 <span class="k">end</span>
 </pre></div>
-<div class='slide'>
-<div class="highlight"><pre><span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
-  <span class="n">args</span><span class="o">.</span><span class="n">sum</span>
-<span class="k">end</span>
-</pre></div>
-</div>
+<pre class='test-output'>Finished in 0.000342 seconds.&#x000A;&#x000A;<strong class='green'>1 tests, 1 assertions, 0 failures, 0 errors</strong></pre>
 </section>
 <section class='slide' id='circle'>
 <h2>Kreislauf</h2>
 <div class='image-wrap normal-image'><img src='imgs/rgr.jpg'/><div class='caption'>Agile in a Flash</div></div>
 </section>
+<section class='slide red'>
+<h2>Red</h2>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">test_adder_3_args</span>
+  <span class="n">assert_equal</span> <span class="mi">4</span><span class="p">,</span> <span class="no">Adder</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+<pre class='test-output'>1) Error: test_adder_3_args(TestAdder):&#x000A;ArgumentError: wrong number of arguments (3 for 2)&#x000A;    lib/adder.rb:2:in `add'&#x000A;&#x000A;<strong class='red'>2 tests, 1 assertions, 0 failures, 1 errors, 0 skips</strong></pre>
+</section>
+<section class='slide green'>
+<h2>Green</h2>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Adder</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+<pre class='test-output'><strong class='green'>2 tests, 2 assertions, 0 failures, 0 errors</strong>&#x000A;</pre>
+</section>
+<section class='slide refactor'>
+<h2>Green</h2>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Adder</span>
+  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">sum</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+<pre class='test-output'><strong class='green'>2 tests, 2 assertions, 0 failures, 0 errors</strong>&#x000A;&#x000A;</pre>
+</section>
 <section class='slide'>
 <h2>Vorteile</h2>
 <ul>
-<li>Code und Test entstehen im Einklang</li>
+<li>
+Code und Test entstehen im Einklang
+<ul>
+<li>Code muss sich Test anpassen und nicht umgekehrt</li>
 <li>&rarr; übersichtlichere Methoden</li>
-<li>von Stunde 0 an hohe Testabdeckung</li>
+</ul>
+</li>
+<li>hohe Testabdeckung</li>
 <li>ermöglicht sichere Refaktorisierungen</li>
+<li>sofortiges Feedback</li>
 </ul>
 </section>
 
@@ -228,7 +269,7 @@ Ablauf
 <section class='slide toc' id='results'>
 <h1>Ergebnisse</h1>
 </section>
-<section class='slide toc'>
+<section class='slide'>
 <h2>Status der Entwicklung</h2>
 <ul>
 <li>Entwicklung von www.it-jobs-und-stellen.de nicht abgeschlossen &rarr; Repriorisierung</li>
@@ -253,13 +294,25 @@ Allerdings signifikante Teile extrahiert und in Produktion:
 <h2>Smells</h2>
 <img src='imgs/itjobs-smells.png'/>
 </section>
-<section class='slide toc' id='benchmark'>
+<section class='slide' id='benchmark'>
 <h2>Benchmark</h2>
 <img src='imgs/complexity.png'/>
 </section>
 
 <section class='slide toc' id='fazit'>
 <h1>Fazit</h1>
+</section>
+<section class='slide'>
+<blockquote>
+<p>
+Testgetriebene Entwicklung
+<ul>
+<li>Effektive Möglichkeit zur Qualitätssicherung?</li>
+<li>Code-Qualität nachhaltig verbessert?</li>
+<li>Ruby/Rails geeignet?</li>
+</ul>
+</p>
+</blockquote>
 </section>
 <section class='slide'>
 <h2>Lessons learned</h2>
@@ -290,7 +343,6 @@ manche Aspekte nicht testbar (Usability, Sicherheit, Nebenläufigkeit)
 <h2>Ausblick</h2>
 <ul>
 <li>Akzeptanztests als treibende Kraft (ATTD)</li>
-<li>Sammlung von typischen Kennzahlen von Rails-Projekten als Benchmark.</li>
 <li>psychologische Auswirkungen von TDD &rarr; kleine Belohnungen, fast wie ein Spiel</li>
 <li>weitere Fallstudien zu TDD mit anderen Programmierplattformen</li>
 </ul>
@@ -300,23 +352,19 @@ manche Aspekte nicht testbar (Usability, Sicherheit, Nebenläufigkeit)
 </section>
 
 <section class='slide'>
-<h1>Appendix</h1>
+<h1>FAQ</h1>
 </section>
 <section class='slide'>
 <h2>Prinzip des Empfehlungssystems</h2>
-<div class='image-wrap normal-image'><img src='imgs/empfehlungscode.png'/><div class='caption'></div></div>
+<img src='imgs/empfehlungscode.png'/>
 </section>
 <section class='slide'>
 <h2>MVC von Rails</h2>
-<div class='image-wrap normal-image'><img src='imgs/mvc.png'/><div class='caption'></div></div>
+<img src='imgs/mvc.png'/>
 </section>
 <section class='slide'>
-<h2>Ablauf TDD+Design</h2>
-<div class='image-wrap normal-image'><img src='ablauf.png'/><div class='caption'></div></div>
-</section>
-<section class='slide'>
-<h2>Tests</h2>
-<div class='image-wrap normal-image'><img src='testarten.png'/><div class='caption'></div></div>
+<h2>TDD + Design</h2>
+<img src='imgs/ablauf.png'/>
 </section>
 
 

@@ -16,16 +16,17 @@
   position: absolute;
   right: 0;
   top: 50%;
-  font-size: 300%;
+  font-size: 200%;
   text-align: center;
+  font-family: TeXGyreBonumRegular, sans-serif;
 }
-/* line 26, ../sass/screen.scss */
+/* line 27, ../sass/screen.scss */
 .deck-container .deck-status {
   font-size: 1.3em;
   bottom: 20px;
   right: 20px;
 }
-/* line 32, ../sass/screen.scss */
+/* line 33, ../sass/screen.scss */
 .deck-container .slide-footer {
   position: absolute;
   bottom: 20px;
@@ -37,12 +38,12 @@
   line-height: 42px;
 }
 
-/* line 43, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .deck-menu .slide-footer {
   background: none;
 }
 
-/* line 46, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 .deck-container section.slide {
   background: none repeat scroll 0 0 white;
   border-left: 1px solid #CCCCCC;
@@ -52,17 +53,17 @@
   text-shadow: none;
 }
 
-/* line 56, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 #toc .H2 {
   margin-left: 20px;
   list-style: circle outside none;
 }
-/* line 60, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 #toc a {
   color: black;
 }
 
-/* line 65, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 .caption {
   font-style: italic;
   font-variant: small-caps;
@@ -70,7 +71,7 @@
   padding-top: -10px;
 }
 
-/* line 71, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .deck-container pre {
   border: 1px solid #999999;
   border-radius: 0;
@@ -689,22 +690,22 @@ strong.highlight {
   font-style: normal;
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .highlight pre, .deck-container pre {
   font-family: "UbuntuMonoRegular", monospace;
 }
 
-/* line 84, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 .highlight {
   background: transparent;
 }
 
-/* line 88, ../sass/screen.scss */
+/* line 89, ../sass/screen.scss */
 .deck-container h1, .deck-container h2 {
   font-family: "GabrielleRegular", "Hoefler Text",Constantia,Palatino,"Palatino Linotype","Book Antiqua",Georgia,serif;
 }
 
-/* line 92, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 .deck-container {
   font-family: "Calibri","MyndraineRegular", sans-serif;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #cccccc), color-stop(100%, #666666));
@@ -715,7 +716,7 @@ strong.highlight {
   background-image: linear-gradient(#cccccc, #666666);
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 .deck-container section h1 {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f3f3f3), color-stop(100%, #e3e3e3));
   background-image: -webkit-linear-gradient(#f3f3f3, #e3e3e3);
@@ -727,31 +728,40 @@ strong.highlight {
   border-top: 1px solid #ddd;
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 .side-image {
   float: right;
   margin: 20px;
 }
-/* line 107, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 .side-image .caption {
   border-top: 1px solid #999;
 }
 
-/* line 111, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 .image-list {
   padding: 10px;
   display: block;
   margin: auto;
   text-align: center;
 }
-/* line 112, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 .image-list img {
   display: inline;
   padding: 0 10px;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 .cssreflections .deck-container h2 {
   -webkit-box-reflect: none;
   -moz-box-reflect: none;
+}
+
+/* line 124, ../sass/screen.scss */
+body.deck-container {
+  font-size: 25px;
+}
+/* line 126, ../sass/screen.scss */
+body.deck-container p, body.deck-container ul {
+  max-width: 30em;
 }

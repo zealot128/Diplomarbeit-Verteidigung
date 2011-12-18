@@ -19,8 +19,9 @@ $logo-width: 120px;
     position: absolute;
     right: 0;
     top: 50%;
-    font-size: 300%;
+    font-size: 200%;
     text-align: center;
+    font-family: TeXGyreBonumRegular, sans-serif;
   }
 
    .deck-status {
@@ -118,4 +119,11 @@ $logo-width: 120px;
 .cssreflections .deck-container h2 {
     -webkit-box-reflect: none;
     -moz-box-reflect: none;
+}
+
+body.deck-container{
+  font-size: 25px;
+  p, ul {
+    max-width: 30em;
+  }
 }

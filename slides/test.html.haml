@@ -60,8 +60,6 @@
       end
   %pre.test-output
     :preserve
-      Finished in 0.000342 seconds.
-
       <strong class='green'>1 tests, 1 assertions, 0 failures, 0 errors</strong>
 
 
@@ -74,24 +72,66 @@
           a + b
         end
       end
-  .slide
-    =pygmentize "ruby" do
-      :plain
-        def self.add(*args)
-          args.sum
-        end
+  %pre.test-output
+    :preserve
+      Finished in 0.000342 seconds.
 
-
-
+      <strong class='green'>1 tests, 1 assertions, 0 failures, 0 errors</strong>
 %section.slide#circle
   %h2 Kreislauf
   = image_tag_with_caption "imgs/rgr.jpg",  "Agile in a Flash"
 
+%section.slide.red
+  %h2 Red
+  =pygmentize "ruby" do
+    :plain
+      def test_adder_3_args
+        assert_equal 4, Adder.add(2,1,1)
+      end
+  %pre.test-output
+    :preserve
+      1) Error: test_adder_3_args(TestAdder):
+      ArgumentError: wrong number of arguments (3 for 2)
+          lib/adder.rb:2:in `add'
+
+      <strong class='red'>2 tests, 1 assertions, 0 failures, 1 errors, 0 skips</strong>
+%section.slide.green
+  %h2 Green
+  =pygmentize "ruby" do
+    :plain
+      class Adder
+        def self.add(a,b,c=0)
+          a + b + c
+        end
+      end
+  %pre.test-output
+    :preserve
+      <strong class='green'>2 tests, 2 assertions, 0 failures, 0 errors</strong>
+
+%section.slide.refactor
+  %h2 Green
+  =pygmentize "ruby" do
+    :plain
+      class Adder
+        def self.add(*args)
+          args.sum
+        end
+      end
+
+  %pre.test-output
+    :preserve
+      <strong class='green'>2 tests, 2 assertions, 0 failures, 0 errors</strong>
+
+
 %section.slide
   %h2 Vorteile
   %ul
-    %li Code und Test entstehen im Einklang
-    %li &rarr; übersichtlichere Methoden
-    %li von Stunde 0 an hohe Testabdeckung
+    %li
+      Code und Test entstehen im Einklang
+      %ul
+        %li Code muss sich Test anpassen und nicht umgekehrt
+        %li &rarr; übersichtlichere Methoden
+    %li hohe Testabdeckung
     %li ermöglicht sichere Refaktorisierungen
+    %li sofortiges Feedback
 
